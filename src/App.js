@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Form from "./form.js"
 
 const App = (props) => {
 
@@ -69,6 +70,8 @@ const App = (props) => {
           : "Loading..."
         }
       </ul>
+      <h1>create event</h1>
+      <Form initial={blank} handleSubmit={handleCreate}/>
     </>
   );
 }
