@@ -8,12 +8,22 @@ const App = (props) => {
 
   // State to hold the event the user wants to edit
   const [eventToEdit, setEventToEdit] = React.useState({
-    // Add blank event form data here
+    title: "",
+    category: "",
+    date: "",
+    location: "",
+    images: [],
+    attendees: []
   });
 
   // Holds blank form data
   const blank = {
-    // Add blank event form data here
+    title: "",
+    category: "",
+    date: "",
+    location: "",
+    images: [],
+    attendees: []
   }
 
   // Hook to get events when the component loads
