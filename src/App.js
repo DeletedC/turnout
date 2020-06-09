@@ -18,21 +18,34 @@ const App = (props) => {
 
   // Hook to get events when the component loads
   React.useEffect(() => {
-    //getEvents();
+    getEvents();
   }, []);
 
   // Get the events from the API
   const getEvents = async () => {
-    //const response = await fetch(<----FILL IN API CALL HERE ---->);
-    //const result = await response.json();
-    //setEvents(result);
+    const response = await fetch('http://localhost:8000/events');
+    const result = await response.json();
+    
+    // Test console.log
+    console.log(result);
+    setEvents(result);
   };
 
-  
+
 
   return (
     <>
       <h1>Turnout</h1>
+      <ul>
+        {events
+          ? events.map((event) => {
+            return (
+              <li key={event._id}>{event.title}</li>
+            );
+          })
+          : "Loading..."
+        }
+      </ul>
     </>
   );
 }
