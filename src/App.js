@@ -55,16 +55,25 @@ const App = (props) => {
     getEvents(); // Update the list of events
   };
 
-
+  const handleDelete = async (id) => {
+    const response = await fetch(`http://localhost:8000/events/${id}`, {
+      method: "DELETE"
+    });
+    getEvents(); // Update the list of events
+  };
 
   return (
     <>
       <h1>Turnout</h1>
       <ul>
         {events
-          ? events.map((event) => {
+          ? events.map((item) => {
             return (
-              <li key={event._id}>{event.title}</li>
+              <li key={item._id}>{item.title}
+                <button onClick={() => {handleDelete(item._id)}}>
+                  Delete
+                </button>
+              </li>
             );
           })
           : "Loading..."
