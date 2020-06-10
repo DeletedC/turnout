@@ -25,7 +25,10 @@ const App = (props) => {
     location: "",
     images: [],
     attendees: []
-  }
+  };
+
+  // State to see if something is visible (like when hovering)
+  const [isVisible, setIsVisible] = React.useState(false);
 
   // Hook to get events when the component loads
   React.useEffect(() => {
@@ -84,7 +87,11 @@ const App = (props) => {
         {events
           ? events.map((item) => {
             return (
-              <li key={item._id}>{item.title}
+              <li key={item._id}
+
+                // Show event information when hovering over the title
+                onMouseEnter={() => setIsVisible(true)}
+                onMouseLeave={() => setIsVisible(false)}>{item.title}
                 <br/>
                 <button onClick={() => {handleSelect(item)}}>
                   Edit
@@ -92,6 +99,15 @@ const App = (props) => {
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
+
+                {/*If isVisible is true, render the detailed event info */}
+                {isVisible && (
+                  <div>
+                    <p>Category: {item.category}</p>
+                    <p>Date: {item.date}</p>
+                    <p>Location: {item.location}</p>
+                  </div>
+                )}
               </li>
             );
           })
