@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap"); 
+
+
+$primary-color:  rgb(14, 57, 77);
+$secondary-color: rgb(212, 212, 212);
+$title-color: rgb(34, 102, 255);
+
+
+html {
+    font-family: sans-serif; 
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+}
+body {
+    margin: 0;
+    background-color: rgb(245, 245, 245);
+}
+  
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+  
+  audio,
+  canvas,
+  progress,
+  video {
+    display: inline-block; 
+    vertical-align: baseline; 
+  }
+  
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+  
+  [hidden],
+  template {
+    display: none;
+  }
+
+
+
+  header {
+      img {
+          width: 10%;
+      }
+  }
+
+
+.event-handlers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    color: $primary-color;
+    text-shadow: .5px .5px $title-color;
+    #create-event {
+        background-color: $secondary-color;
+        border: 3px solid $primary-color;
+        border-radius: 20px;
+        padding: 15px 70px 50px 70px;
+        box-shadow: 1px 1px 1px 1px $primary-color;
+    }
+    #edit-event {
+        background-color: $secondary-color;
+        border: 3px solid $primary-color;
+        border-radius: 20px;
+        padding: 15px 70px 50px 70px;
+        box-shadow: 1px 1px 1px 1px $primary-color;
+    }
+    img {
+        height: 200px;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+    button {
+        margin-top: 20px;
+        background-color: $primary-color;
+        border: 2px solid $primary-color;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+
+    }
+    button:hover {
+        background-color: $title-color;
+        transition: .3s;
+    }
+
+}
