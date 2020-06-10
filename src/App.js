@@ -86,7 +86,7 @@ const App = (props) => {
     <>
       <header>
         <img src={logo} alt="Logo"/>
-      {/* login bar top right? */}
+      <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
         {events
