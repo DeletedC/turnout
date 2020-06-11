@@ -61,13 +61,12 @@ const App = (props) => {
     <>
       <h1>Turnout</h1>
       <ul>
-        {events
-          ? events.map((event) => {
+        {events? events.map((event) => {
             return (
               <li key={event._id}>{event.title}</li>
             );
           })
-          : "Loading..."
+          : <li>Loading...</li>
         }
       </ul>
       <h1>create event</h1>
