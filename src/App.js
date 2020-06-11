@@ -29,9 +29,6 @@ const App = (props) => {
     attendees: []
   };
 
-  // State to see if something is visible (like when hovering)
-  const [isVisible, setIsVisible] = React.useState(false);
-
   // Hook to get events when the component loads
   React.useEffect(() => {
     getEvents();
@@ -90,7 +87,7 @@ const App = (props) => {
       </header>
       <ul>
         {events
-          ? events.map((item, index) => {
+          ? events.map((item) => {
             return (
               <li key={item._id}>{item.title}
                 <br/>
@@ -113,16 +110,16 @@ const App = (props) => {
       </ul>
       <div class="event-handlers">
         <div id="create-event">
-      <h2 class="create">Create Event</h2>
-      <Form initial={blank} handleSubmit={handleCreate}/>
-      </div>
-      <div>
-        <img src={img} alt="Img"/>
-      </div>
-      <div id="edit-event">
-      <h2 class="edit">Edit Event</h2>
-      <Form initial={eventToEdit} handleSubmit={handleEdit}/>
-      </div>
+          <h2 class="create">Create Event</h2>
+          <Form initial={blank} handleSubmit={handleCreate}/>
+        </div>
+          <div>
+            <img src={img} alt="Img"/>
+          </div>
+        <div id="edit-event">
+          <h2 class="edit">Edit Event</h2>
+          <Form initial={eventToEdit} handleSubmit={handleEdit}/>
+        </div>
       </div>
     </>
   );
