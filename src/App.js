@@ -85,13 +85,9 @@ const App = (props) => {
       <h1>Turnout</h1>
       <ul>
         {events
-          ? events.map((item) => {
+          ? events.map((item, index) => {
             return (
-              <li key={item._id}
-
-                // Show event information when hovering over the title
-                onMouseEnter={() => setIsVisible(true)}
-                onMouseLeave={() => setIsVisible(false)}>{item.title}
+              <li key={item._id}>{item.title}
                 <br/>
                 <button onClick={() => {handleSelect(item)}}>
                   Edit
@@ -99,15 +95,11 @@ const App = (props) => {
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
-
-                {/*If isVisible is true, render the detailed event info */}
-                {isVisible && (
-                  <div>
+                  <div className="eventSnippet">
                     <p>Category: {item.category}</p>
                     <p>Date: {item.date}</p>
                     <p>Location: {item.location}</p>
                   </div>
-                )}
               </li>
             );
           })
