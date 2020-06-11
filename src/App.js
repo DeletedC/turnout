@@ -2,6 +2,10 @@ import React from "react";
 import "./style.css";
 import MainNav from "./MainNav"
 import { Link } from 'react-router-dom';
+import "./style.scss";
+import Form from "./form.js"
+import logo from "./imgs/logo-name.png"
+import img from "./imgs/logo.png"
 
 const App = (props) => {
 
@@ -86,6 +90,10 @@ const App = (props) => {
     <>
     <MainNav/>
       <h1>Turnout</h1>
+      <header>
+        <img src={logo} alt="Logo"/>
+        <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
+      </header>
       <ul>
         {events
           ? events.map((item) => {
@@ -123,10 +131,19 @@ const App = (props) => {
           : "Loading..."
         }
       </ul>
-      {/* <h2>Create Event</h2>
-      <Form initial={blank} handleSubmit={handleCreate}/> */}
-       {/* <h2>Edit Event</h2>
-      <Form initial={eventToEdit} handleSubmit={handleEdit}/> */}
+      <div class="event-handlers">
+        <div id="create-event">
+          <h2 class="create">Create Event</h2>
+          <Form initial={blank} handleSubmit={handleCreate}/>
+        </div>
+        <div>
+          <img src={img} alt="Img"/>
+        </div>
+        <div id="edit-event">
+          <h2 class="edit">Edit Event</h2>
+          <Form initial={eventToEdit} handleSubmit={handleEdit}/>
+        </div>
+      </div>
     </>
   );
 }
