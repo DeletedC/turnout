@@ -1,10 +1,14 @@
 import React from "react";
+import "./style.css";
+import MainNav from "./MainNav"
+import { Link } from 'react-router-dom';
 import "./style.scss";
 import Form from "./form.js"
 import logo from "./imgs/logo-name.png"
 import img from "./imgs/logo.png"
 
 const App = (props) => {
+
 
   // State to hold all events
   const [events, setEvents] = React.useState(null);
@@ -15,24 +19,24 @@ const App = (props) => {
     category: "",
     date: "",
     location: "",
-    images: [],
+    images: "",
     attendees: []
   });
 
-  // Holds blank form data
-  const blank = {
-    title: "",
-    category: "",
-    date: "",
-    location: "",
-    images: [],
-    attendees: []
-  };
+  // // Holds blank form data
+  // const blank = {
+  //   title: "",
+  //   category: "",
+  //   date: "",
+  //   location: "",
+  //   images: [],
+  //   attendees: []
+  // };
 
   // State to see if something is visible (like when hovering)
   const [isVisible, setIsVisible] = React.useState(false);
 
-  // Hook to get events when the component loads
+  // // Hook to get events when the component loads
   React.useEffect(() => {
     getEvents();
   }, []);
@@ -48,17 +52,17 @@ const App = (props) => {
   };
   
   // Create a new event
-  const handleCreate = async (data) => {
-    const response = await fetch('http://localhost:8000/events', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
+  // const handleCreate = async (data) => {
+  //   const response = await fetch('http://localhost:8000/events', {
+  //     method: "POST",
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(data)
+  //   });
     
-    getEvents(); // Update the list of events
-  };
+  //   getEvents(); // Update the list of events
+  // };
 
   const handleDelete = async (id) => {
     const response = await fetch(`http://localhost:8000/events/${id}`, {
@@ -84,9 +88,11 @@ const App = (props) => {
 
   return (
     <>
+    <MainNav/>
+      <h1>Turnout</h1>
       <header>
         <img src={logo} alt="Logo"/>
-      <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
+        <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
         {events
@@ -95,11 +101,17 @@ const App = (props) => {
               <li key={item._id}
 
                 // Show event information when hovering over the title
-                onMouseEnter={() => setIsVisible(true)}
-                onMouseLeave={() => setIsVisible(false)}>{item.title}
+                onMouseEnter={() => setIsVisible(true)} 
+                onMouseLeave={() => setIsVisible(false)}>
+                {item.title}
                 <br/>
-                <button onClick={() => {handleSelect(item)}}>
+                {/* <button onClick={() => {handleSelect(item)}}>
                   Edit
+                </button> */}
+                <button>
+                <Link to='./edit'>
+                  Edit
+                  </Link>
                 </button>
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
@@ -121,16 +133,16 @@ const App = (props) => {
       </ul>
       <div class="event-handlers">
         <div id="create-event">
-      <h2 class="create">Create Event</h2>
-      <Form initial={blank} handleSubmit={handleCreate}/>
-      </div>
-      <div>
-        <img src={img} alt="Img"/>
-      </div>
-      <div id="edit-event">
-      <h2 class="edit">Edit Event</h2>
-      <Form initial={eventToEdit} handleSubmit={handleEdit}/>
-      </div>
+          <h2 class="create">Create Event</h2>
+          <Form initial={blank} handleSubmit={handleCreate}/>
+        </div>
+        <div>
+          <img src={img} alt="Img"/>
+        </div>
+        <div id="edit-event">
+          <h2 class="edit">Edit Event</h2>
+          <Form initial={eventToEdit} handleSubmit={handleEdit}/>
+        </div>
       </div>
     </>
   );
