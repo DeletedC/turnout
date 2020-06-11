@@ -95,8 +95,8 @@ const App = (props) => {
         <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
-        {events
-          ? events.map((item) => {
+        {events? events.map((event) => {
+
             return (
               <li key={item._id}
 
@@ -128,7 +128,7 @@ const App = (props) => {
               </li>
             );
           })
-          : "Loading..."
+          : <li>Loading...</li>
         }
       </ul>
       <div class="event-handlers">
