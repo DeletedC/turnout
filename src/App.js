@@ -113,9 +113,9 @@ const App = (props) => {
           <h2 class="create">Create Event</h2>
           <Form initial={blank} handleSubmit={handleCreate}/>
         </div>
-          <div>
-            <img src={img} alt="Img"/>
-          </div>
+        <div>
+          <img src={img} alt="Img"/>
+        </div>
         <div id="edit-event">
           <h2 class="edit">Edit Event</h2>
           <Form initial={eventToEdit} handleSubmit={handleEdit}/>
