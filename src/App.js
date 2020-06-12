@@ -5,6 +5,7 @@ import "./style.scss";
 import Form from "./form.js"
 import logo from "./imgs/logo-name.png"
 import img from "./imgs/logo.png"
+import SocialFollow from "./SocialFollow"
 
 const App = (props) => {
 
@@ -31,7 +32,7 @@ const App = (props) => {
   //   images: [],
   //   attendees: []
   // };
-import SocialFollow from "./SocialFollow"
+
 
 const App = (props) => {
 
