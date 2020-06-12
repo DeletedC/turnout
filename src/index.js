@@ -7,9 +7,15 @@ import App from "./App";
 import New from "./New";
 import Edit from "./Edit";
 import Test from "./Test";
-import Show from "./Show"
+import Show from "./Show.js"
 
 const routes = [
+    
+    {
+        path: "/show",
+        component: Show,
+        name: "Show"
+    },
     {
         path: "/new",
         component: New,
@@ -24,11 +30,6 @@ const routes = [
         path: "/",
         component: App,
         name: "Home"
-    },
-    {
-        path: "/show",
-        component: Show,
-        name: "Show"
     }
 ]
 
