@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import MainNav from "./MainNav"
 import { Link } from 'react-router-dom';
 import "./style.scss";
@@ -33,9 +32,6 @@ const App = (props) => {
   //   attendees: []
   // };
 
-  // State to see if something is visible (like when hovering)
-  const [isVisible, setIsVisible] = React.useState(false);
-
   // // Hook to get events when the component loads
   React.useEffect(() => {
     getEvents();
@@ -50,19 +46,6 @@ const App = (props) => {
     console.log(result);
     setEvents(result);
   };
-  
-  // Create a new event
-  // const handleCreate = async (data) => {
-  //   const response = await fetch('http://localhost:8000/events', {
-  //     method: "POST",
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(data)
-  //   });
-    
-  //   getEvents(); // Update the list of events
-  // };
 
   const handleDelete = async (id) => {
     const response = await fetch(`http://localhost:8000/events/${id}`, {
@@ -95,14 +78,10 @@ const App = (props) => {
         <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
-        {events? events.map((event) => {
+        {events? events.map((item) => {
 
             return (
-              <li key={item._id}
-
-                // Show event information when hovering over the title
-                onMouseEnter={() => setIsVisible(true)} 
-                onMouseLeave={() => setIsVisible(false)}>
+              <li key={item._id}>
                 {item.title}
                 <br/>
                 {/* <button onClick={() => {handleSelect(item)}}>
@@ -116,15 +95,11 @@ const App = (props) => {
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
-
-                {/*If isVisible is true, render the detailed event info */}
-                {isVisible && (
                   <div>
                     <p>Category: {item.category}</p>
                     <p>Date: {item.date}</p>
                     <p>Location: {item.location}</p>
                   </div>
-                )}
               </li>
             );
           })
@@ -134,7 +109,7 @@ const App = (props) => {
       <div class="event-handlers">
         <div id="create-event">
           <h2 class="create">Create Event</h2>
-          <Form initial={blank} handleSubmit={handleCreate}/>
+          {/* <Form initial={blank} handleSubmit={handleCreate}/> */}
         </div>
         <div>
           <img src={img} alt="Img"/>
