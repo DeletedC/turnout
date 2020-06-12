@@ -32,7 +32,7 @@ const App = (props) => {
   //   attendees: []
   // };
 
-  // // Hook to get events when the component loads
+  // Hook to get events when the component loads
   React.useEffect(() => {
     getEvents();
   }, []);
@@ -81,21 +81,20 @@ const App = (props) => {
         {events? events.map((item) => {
 
             return (
-              <li key={item._id}>
-                {item.title}
+              <li key={item._id}><Link to="./show">{item.title}</Link>
                 <br/>
                 {/* <button onClick={() => {handleSelect(item)}}>
                   Edit
                 </button> */}
                 <button>
-                <Link to='./edit'>
-                  Edit
+                  <Link to={{pathname: './edit', state: {item}}}>
+                    Edit
                   </Link>
                 </button>
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
-                  <div>
+                  <div className="eventSnippet">
                     <p>Category: {item.category}</p>
                     <p>Date: {item.date}</p>
                     <p>Location: {item.location}</p>
