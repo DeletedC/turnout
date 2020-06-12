@@ -1,10 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 import "../style.css";
 import Form from "../form.js"
 import MainNav from "../MainNav"
+import SocialFollow from "../SocialFollow"
 
 export default (New)=>{
-    const [events, setEvents] = React.useState(null);
+    const [setEvents] = React.useState(null);
     const blank = {
         title: "",
         category: "",
@@ -20,8 +21,9 @@ export default (New)=>{
         
         // Test console.log
         console.log(result);
-        setEvents(result);
+        // setEvents(result);
       };
+
 
      /// / Create a new event
   const handleCreate = async (data) => {
@@ -38,8 +40,10 @@ export default (New)=>{
       return (
           <div>
               <MainNav/>
-     <h2>Create Event</h2>
-      <Form initial={blank} handleSubmit={handleCreate}/>
+              <h2>Create Event</h2>
+              <Form initial={blank} handleSubmit={handleCreate}/>
+             <SocialFollow/>
       </div>
       )
+      
 }

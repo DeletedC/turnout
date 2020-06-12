@@ -31,13 +31,18 @@ const App = (props) => {
   //   images: [],
   //   attendees: []
   // };
+import SocialFollow from "./SocialFollow"
 
-  // Hook to get events when the component loads
+const App = (props) => {
+
+  const [events, setEvents] = React.useState(null)
+
+  // // Hook to get events when the component loads
   React.useEffect(() => {
     getEvents();
   }, []);
 
-  // Get the events from the API
+  /// Get the events from the API
   const getEvents = async () => {
     const response = await fetch('http://localhost:8000/events');
     const result = await response.json();
@@ -69,6 +74,7 @@ const App = (props) => {
     getEvents(); // Update list of events
   };
 
+  
   return (
     <>
     <MainNav/>
@@ -118,6 +124,7 @@ const App = (props) => {
           <Form initial={eventToEdit} handleSubmit={handleEdit}/>
         </div>
       </div>
+      <SocialFollow />
     </>
   );
 }
