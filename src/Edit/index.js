@@ -3,7 +3,7 @@ import "../style.css";
 import Form from "../form.js"
 import MainNav from "../MainNav"
 
-export default (Edit)=>{
+export default (props)=>{
 
      const [eventToEdit, setEvents] = React.useState({
         title: "",
@@ -39,10 +39,11 @@ export default (Edit)=>{
     //   };
 
       return (
-          <div>
+        <div>
+          {console.log(props)}
           <MainNav/>
-      <h2>Edit Event</h2>
-      <Form initial={eventToEdit} handleSubmit={handleEdit}/>
-       </div>
+          <h2>Edit Event</h2>
+          <Form initial={props.location.state.item} handleSubmit={handleEdit}/>
+        </div>
       )
 }

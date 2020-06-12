@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import MainNav from "./MainNav"
 import { Link } from 'react-router-dom';
 import "./style.scss";
@@ -47,19 +46,6 @@ const App = (props) => {
     console.log(result);
     setEvents(result);
   };
-  
-  // Create a new event
-  // const handleCreate = async (data) => {
-  //   const response = await fetch('http://localhost:8000/events', {
-  //     method: "POST",
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(data)
-  //   });
-    
-  //   getEvents(); // Update the list of events
-  // };
 
   const handleDelete = async (id) => {
     const response = await fetch(`http://localhost:8000/events/${id}`, {
@@ -95,14 +81,14 @@ const App = (props) => {
         {events? events.map((item) => {
 
             return (
-              <li key={item._id}>{item.title}
+              <li key={item._id}><Link to="./show">{item.title}</Link>
                 <br/>
                 {/* <button onClick={() => {handleSelect(item)}}>
                   Edit
                 </button> */}
                 <button>
-                <Link to='./edit'>
-                  Edit
+                  <Link to={{pathname: './edit', state: {item}}}>
+                    Edit
                   </Link>
                 </button>
                 <button onClick={() => {handleDelete(item._id)}}>
