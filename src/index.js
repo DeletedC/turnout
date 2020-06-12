@@ -5,9 +5,8 @@ import { createBrowserHistory } from 'history';
 
 import App from "./App";
 import New from "./New";
-import Edit from "./Edit";
 import Test from "./Test";
-import Show from "./Show"
+import Dashboard from "./Dashboard";
 
 const routes = [
     {
@@ -15,21 +14,17 @@ const routes = [
         component: New,
         name: "Create New Event"
     },
-    {
-        path: "/edit",
-        component: Edit,
-        name: "Edit"
-    },
+        {
+            path: "/dashboard",
+            component: Dashboard,
+            name: "Dashboard"
+        },
     {
         path: "/",
         component: App,
         name: "Home"
     },
-    {
-        path: "/show",
-        component: Show,
-        name: "Show"
-    }
+    
 ]
 
 const root = document.getElementById('root')
