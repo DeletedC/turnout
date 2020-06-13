@@ -29,9 +29,7 @@ export default (props) => {
         <>
         <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/><br/>
         <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/><br/>
-
         <input min={`2020-${thisMonth()}-${thisDay()}`} max="2021-01-01" type="date" name="date" placeholder="date" value={formData.date} onChange={handleChange}/><br/>
-
         <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange}/><br/>
         <button onClick={() => {
             props.handleSubmit(formData);
