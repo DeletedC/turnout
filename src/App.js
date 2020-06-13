@@ -33,10 +33,8 @@ const App = (props) => {
   //   attendees: []
   // };
 
-
-const App = (props) => {
-
-  const [events, setEvents] = React.useState(null)
+  // State for storing JWT
+  const [token, setToken] = React.useState(null);
 
   // // Hook to get events when the component loads
   React.useEffect(() => {
@@ -74,11 +72,15 @@ const App = (props) => {
     });
     getEvents(); // Update list of events
   };
-
   
   return (
     <>
     <MainNav/>
+      <button>
+        <Link to="/login">
+          Login
+        </Link>
+      </button>
       <h1>Turnout</h1>
       <header>
         <img src={logo} alt="Logo"/>
@@ -94,7 +96,7 @@ const App = (props) => {
                   Edit
                 </button> */}
                 <button>
-                  <Link to={{pathname: './edit', state: {item}}}>
+                  <Link to={{pathname: '/edit', state: {item}}}>
                     Edit
                   </Link>
                 </button>

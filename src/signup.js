@@ -8,8 +8,8 @@ export default (props) => {
         setFormData({...formData, [event.target.name]:event.target.value})
     }
 
-    const handleLogin = async (data) => {
-        const response = await fetch(`http://localhost:8000/users/login`, {
+    const handleSignUp = async (data) => {
+        const response = await fetch(`http://localhost:8000/users/signup`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -21,6 +21,20 @@ export default (props) => {
 
     return (
         <>
+            <h3>Name</h3>
+            <input 
+                type="text" 
+                name="firstName"
+                placeholder="First Name" 
+                value={formData.firstName} 
+                onChange={handleChange}/>
+            <input 
+                type="text" 
+                name="lastName"
+                placeholder="Last Name" 
+                value={formData.lastName} 
+                onChange={handleChange}/>
+            <br/>
             <h3>Username</h3>
             <input 
                 type="text" 
@@ -44,7 +58,7 @@ export default (props) => {
                 onChange={handleChange}/>
                 <br/>
             <button onClick={() => {
-                handleLogin(formData);
+                handleSignUp(formData);
                 }}>SUBMIT
             </button>
         </>

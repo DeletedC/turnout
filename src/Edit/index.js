@@ -37,10 +37,9 @@ export default (props)=>{
     //   const handleSelect = async (item) => {
     //     setEventToEdit(item);
     //   };
-
+      console.log(props.location.state.item);
       return (
         <div>
-          {console.log(props)}
           <MainNav/>
           <h2>Edit Event</h2>
           <Form initial={props.location.state.item} handleSubmit={handleEdit}/>
