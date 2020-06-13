@@ -38,7 +38,7 @@ export default (New)=>{
       return (
           <div>
               <MainNav/>
-     <h2>Create Event</h2>
+     <h2 className="center">Create Event</h2>
       <Form initial={blank} handleSubmit={handleCreate}/>
       </div>
       )

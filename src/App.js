@@ -1,5 +1,4 @@
 import React from "react";
-import MainNav from "./MainNav"
 import { Link } from 'react-router-dom';
 import "./style.scss";
 import Form from "./form.js"
@@ -71,10 +70,7 @@ const App = (props) => {
 
   return (
     <>
-    <MainNav/>
-      <h1>Turnout</h1>
       <header>
-        <img src={logo} alt="Logo"/>
         <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
@@ -105,16 +101,16 @@ const App = (props) => {
           : <li>Loading...</li>
         }
       </ul>
-      <div class="event-handlers">
+      <div className="event-handlers">
         <div id="create-event">
-          <h2 class="create">Create Event</h2>
+          <h2 className="create">Create Event</h2>
           {/* <Form initial={blank} handleSubmit={handleCreate}/> */}
         </div>
         <div>
           <img src={img} alt="Img"/>
         </div>
         <div id="edit-event">
-          <h2 class="edit">Edit Event</h2>
+          <h2 className="edit">Edit Event</h2>
           <Form initial={eventToEdit} handleSubmit={handleEdit}/>
         </div>
       </div>
