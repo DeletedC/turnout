@@ -1,10 +1,13 @@
 import React from "react";
+import MainNav from "./MainNav"
+import { Link } from 'react-router-dom';
 import "./style.scss";
 import Form from "./form.js"
 import logo from "./imgs/logo-name.png"
 import img from "./imgs/logo.png"
 
 const App = (props) => {
+
 
   // State to hold all events
   const [events, setEvents] = React.useState(null);
@@ -15,22 +18,19 @@ const App = (props) => {
     category: "",
     date: "",
     location: "",
-    images: [],
+    images: "",
     attendees: []
   });
 
-  // Holds blank form data
-  const blank = {
-    title: "",
-    category: "",
-    date: "",
-    location: "",
-    images: [],
-    attendees: []
-  };
-
-  // State to see if something is visible (like when hovering)
-  const [isVisible, setIsVisible] = React.useState(false);
+  // // Holds blank form data
+  // const blank = {
+  //   title: "",
+  //   category: "",
+  //   date: "",
+  //   location: "",
+  //   images: [],
+  //   attendees: []
+  // };
 
   // Hook to get events when the component loads
   React.useEffect(() => {
@@ -45,19 +45,6 @@ const App = (props) => {
     // Test console.log
     console.log(result);
     setEvents(result);
-  };
-  
-  // Create a new event
-  const handleCreate = async (data) => {
-    const response = await fetch('http://localhost:8000/events', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-    
-    getEvents(); // Update the list of events
   };
 
   const handleDelete = async (id) => {
@@ -84,53 +71,50 @@ const App = (props) => {
 
   return (
     <>
+    <MainNav/>
       <header>
         <img src={logo} alt="Logo"/>
-      <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
+        <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
-        {events
-          ? events.map((item) => {
-            return (
-              <li key={item._id}
+        {events? events.map((item) => {
 
-                // Show event information when hovering over the title
-                onMouseEnter={() => setIsVisible(true)}
-                onMouseLeave={() => setIsVisible(false)}>{item.title}
+            return (
+              <li key={item._id}><Link to="./show">{item.title}</Link>
                 <br/>
-                <button onClick={() => {handleSelect(item)}}>
+                {/* <button onClick={() => {handleSelect(item)}}>
                   Edit
+                </button> */}
+                <button>
+                  <Link to={{pathname: './edit', state: {item}}}>
+                    Edit
+                  </Link>
                 </button>
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
-
-                {/*If isVisible is true, render the detailed event info */}
-                {isVisible && (
-                  <div>
+                  <div className="eventSnippet">
                     <p>Category: {item.category}</p>
                     <p>Date: {item.date}</p>
                     <p>Location: {item.location}</p>
                   </div>
-                )}
               </li>
             );
           })
-          : "Loading..."
+          : <li>Loading...</li>
         }
       </ul>
-      <div className="event-handlers">
-        <div className="create-event">
-      <h2 className="create">Create Event</h2>
-      <Form initial={blank} handleSubmit={handleCreate}/>
-      </div>
-      <div>
-        <img src={img} alt="Img"/>
-      </div>
-      <div className="edit-event">
-      <h2 className="edit">Edit Event</h2>
-      <Form initial={eventToEdit} handleSubmit={handleEdit}/>
-      </div>
+      <div class="event-handlers">
+        
+          {/* <Form initial={blank} handleSubmit={handleCreate}/> */}
+        
+        <div>
+          <img src={img} alt="Img"/>
+        </div>
+        <div id="edit-event">
+          <h2 class="edit">Edit Event</h2>
+          <Form initial={eventToEdit} handleSubmit={handleEdit}/>
+        </div>
       </div>
     </>
   );

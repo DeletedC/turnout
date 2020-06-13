@@ -27,6 +27,7 @@ export default (props) => {
     }
     return (
         <>
+        <p className="event">Your Event</p>
         <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/><br/>
         <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/><br/>
 

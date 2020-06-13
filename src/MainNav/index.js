@@ -12,11 +12,11 @@ class MainNav extends React.Component{
     render(){
         return(
             <nav>
-                <ul>
+                <ul className="navbar">
                     {
                         this.state.routes.map((route, index)=>{
                            return (
-                            <li  className="" key={index}><Link to={route.path}>{route.name}</Link></li>
+                            <li  className="list-items" key={index}><Link to={route.path}>{route.name}</Link></li>
                             )
                          })
                      }
