@@ -10,6 +10,8 @@ export default (props) => {
 
     const history = useHistory()
 
+    const createNew = () => {history.push("/new")}
+    const account = () => {history.push("/users/account")}
     const signup = () => {history.push("/users/signup")}
     const login = () => {history.push("/users/login")}
     const logout = () => {
@@ -30,7 +32,12 @@ export default (props) => {
             
             <div className="btn-cont">
                 {
-                    userData.user? <button onClick={logout}>Logout</button> :
+                    userData.user? 
+                        <>
+                        <button onClick={logout}>Logout</button>
+                        <button onClick={createNew}>New Event</button>
+                        <button onClick={account}>Account</button>
+                        </> :
                     <>
                     <button onClick={login}>Log In</button>
                     <button onClick={signup}>Signup</button>
