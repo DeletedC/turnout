@@ -1,10 +1,10 @@
 import React from "react";
-import MainNav from "./MainNav"
 import { Link } from 'react-router-dom';
 import "./style.scss";
 import Form from "./form.js"
 import logo from "./imgs/logo-name.png"
 import img from "./imgs/logo.png"
+import MainNav from "./MainNav/index"
 
 const App = (props) => {
 
@@ -73,7 +73,6 @@ const App = (props) => {
     <>
     <MainNav/>
       <header>
-        <img src={logo} alt="Logo"/>
         <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
       <ul>
@@ -112,7 +111,7 @@ const App = (props) => {
           <img src={img} alt="Img"/>
         </div>
         <div id="edit-event">
-          <h2 class="edit">Edit Event</h2>
+          <h2 className="edit">Edit Event</h2>
           <Form initial={eventToEdit} handleSubmit={handleEdit}/>
         </div>
       </div>

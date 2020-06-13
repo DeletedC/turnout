@@ -1,15 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import {routes} from '../index';
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import '../MainNav/style.scss'
+import logo from "../imgs/logo-name.png";
+import UserContext from "../context/UserContext.js"
 
-class MainNav extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            routes: routes
-        }
+
+export default (props) => {
+    const { userData, setUserData } = useContext(UserContext);
+
+    const history = useHistory()
+
+    const signup = () => {history.push("/users/signup")}
+    const login = () => {history.push("/users/login")}
+    const logout = () => {
+        setUserData({
+            token: undefined,
+            user: undefined
+        })
+        localStorage.setItem('auth-token', '')
     }
-    render(){
+  
         return(
             <nav>
                 <ul className="navbar">
@@ -22,7 +32,6 @@ class MainNav extends React.Component{
                      }
                  </ul>
              </nav>
+            
          )
-     }
- }
- export default MainNav;
+}

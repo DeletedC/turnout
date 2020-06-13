@@ -25,6 +25,8 @@ export default (props) => {
         let parsed = day.split(' ')
         return parsed[2]
     }
+ 
+
     return (
         <>
         <p className="event">Your Event</p>
@@ -33,15 +35,19 @@ export default (props) => {
 
         <input min={`2020-${thisMonth()}-${thisDay()}`} max="2021-01-01" type="date" name="date" placeholder="date" value={formData.date} onChange={handleChange}/><br/>
 
-        <select defaultValue="AM" name="amOrPm" onChange={handleChange}>
+
+        <div className="input-field">
+        <select className="" defaultValue="AM" name="amOrPm" onChange={handleChange}>
             <option name="AM" value={formData.AM}>AM</option>
             <option name="PM" value={formData.PM}>PM</option>
         </select>
+        <label>Am or Pm</label>
+        </div>
+
         <br/>
         Hour: <input  onChange={handleChange} value={formData.hour} type="number" min="0" max="12" name="hours" /><br/>
         
         Minutes: <input onChange={handleChange} value={formData.minute} type="number" min="0" max="60" name="minutes" /><br/>
-
 
 
         <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange}/><br/>
@@ -49,6 +55,8 @@ export default (props) => {
             props.handleSubmit(formData);
             setFormData(props.initial);
         }}>SUBMIT</button>
+        
+        
         </>
 )
 
