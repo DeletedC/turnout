@@ -76,14 +76,14 @@ body {
     font-family: 'Nunito', sans-serif;
     color: $primary-color;
     text-shadow: .5px .5px black;
-    #create-event {
+    .create-event {
         background-color: $secondary-color;
         border: 3px solid $primary-color;
         border-radius: 20px;
         padding: 15px 70px 50px 70px;
         box-shadow: 1px 1px 1px 1px $primary-color;
     }
-    #edit-event {
+    .edit-event {
         background-color: $secondary-color;
         border: 3px solid $primary-color;
         border-radius: 20px;
