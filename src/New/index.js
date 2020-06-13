@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "../style.css";
 import Form from "../form.js"
-import MainNav from "../MainNav"
 
 export default (New)=>{
     const [events, setEvents] = React.useState(null);
@@ -37,7 +36,6 @@ export default (New)=>{
   };
       return (
           <div>
-              <MainNav/>
      <h2 className="center">Create Event</h2>
       <Form initial={blank} handleSubmit={handleCreate}/>
       </div>

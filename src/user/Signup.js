@@ -1,48 +1,10 @@
 import React, { useState, useContext} from "react";
-import SignupForm from './forms/SignupForm.js'
 import { useHistory } from 'react-router-dom'
 import UserContext from '../context/UserContext.js'
 import Axios from 'axios'
 import Error from './misc/ErrorDisplay.js'
 
 export default (Signup) => {
-//     const blankUser = {
-//         username: "",
-//         password: "",
-//         passwordCheck: "",
-//         email: "",
-//         firstName: "",
-//         lastName: ""
-//       };
-
-//     const [error, setError] = useState();
-  
-//     const { setUserData } = useContext(UserContext)  
-//     const history = useHistory()
-//      /// / Create a new event
-//   const handleCreate = async (data) => {
-//     data.preventDefault()
-//     try {
-//             const createUser = await fetch('http://localhost:8000/users/signup', {
-//               method: "POST",
-//               headers: {
-//                 'Content-Type': 'application/json'
-//               },
-//               body: JSON.stringify(data)
-//             });
-//             const loginResponse = await Axios.post('http://localhost:8000/users/login', {
-//                 email: data.email,
-//                 password: data.password
-//             })
-//             setUserData({
-//                 token: loginResponse.data.token,
-//                 user: loginResponse.data.user
-//             })
-//             localStorage.setItem("auth-token", loginResponse.data.token);
-//             history.push('/')
-//     } catch (err) {
-//         err.response.data.msg && setError(err.response.data.msg);
-//     }    
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
