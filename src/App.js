@@ -119,16 +119,16 @@ const App = (props) => {
           : "Loading..."
         }
       </ul>
-      <div class="event-handlers">
-        <div id="create-event">
-      <h2 class="create">Create Event</h2>
+      <div className="event-handlers">
+        <div className="create-event">
+      <h2 className="create">Create Event</h2>
       <Form initial={blank} handleSubmit={handleCreate}/>
       </div>
       <div>
         <img src={img} alt="Img"/>
       </div>
-      <div id="edit-event">
-      <h2 class="edit">Edit Event</h2>
+      <div className="edit-event">
+      <h2 className="edit">Edit Event</h2>
       <Form initial={eventToEdit} handleSubmit={handleEdit}/>
       </div>
       </div>
