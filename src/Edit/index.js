@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "../style.css";
 import Form from "../form.js"
-import MainNav from "../MainNav"
 
 export default (props)=>{
 
@@ -41,7 +40,6 @@ export default (props)=>{
       return (
         <div>
           {console.log(props)}
-          <MainNav/>
           <h2>Edit Event</h2>
           <Form initial={props.location.state.item} handleSubmit={handleEdit}/>
         </div>

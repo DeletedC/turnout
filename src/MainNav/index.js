@@ -1,28 +1,44 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import {routes} from '../index';
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import '../MainNav/style.scss'
+import logo from "../imgs/logo-name.png";
+import UserContext from "../context/UserContext.js"
 
-class MainNav extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            routes: routes
-        }
+
+export default (props) => {
+    const { userData, setUserData } = useContext(UserContext);
+
+    const history = useHistory()
+
+    const signup = () => {history.push("/users/signup")}
+    const login = () => {history.push("/users/login")}
+    const logout = () => {
+        setUserData({
+            token: undefined,
+            user: undefined
+        })
+        localStorage.setItem('auth-token', '')
     }
-    render(){
+  
         return(
-            <nav>
-                <ul>
-                    {
-                        this.state.routes.map((route, index)=>{
-                           return (
-                            <li  className="" key={index}><Link to={route.path}>{route.name}</Link></li>
-                            )
-                         })
-                     }
-                 </ul>
+            <div className="nav-cont">
+
+            <nav className="grey darken-3 navbar-fixed">
+            <a href="/">
+                <img className="logo-nav brand-logo left" src={logo} alt="turnout logo"/>
+            </a>
+            
+            <div className="btn-cont">
+                {
+                    userData.user? <button onClick={logout}>Logout</button> :
+                    <>
+                    <button onClick={login}>Log In</button>
+                    <button onClick={signup}>Signup</button>
+                    </>
+                }
+            </div>
+
              </nav>
+            </div>
          )
-     }
- }
- export default MainNav;
+}
