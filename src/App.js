@@ -75,11 +75,11 @@ const App = (props) => {
       <header>
         <h1>Organize from anywhere.<br/> Find local gatherings you believe in.</h1>
       </header>
-      <ul>
+      <ul className="event-list">
         {events? events.map((item) => {
 
             return (
-              <li key={item._id}><Link to="./show">{item.title}</Link>
+              <li key={item._id} className="listed-event"><Link to="./show">{item.title}</Link>
                 <br/>
                 {/* <button onClick={() => {handleSelect(item)}}>
                   Edit
@@ -92,7 +92,7 @@ const App = (props) => {
                 <button onClick={() => {handleDelete(item._id)}}>
                   Delete
                 </button>
-                  <div className="eventSnippet">
+                  <div className="event-snippet">
                     <p>Category: {item.category}</p>
                     <p>Date: {item.date}</p>
                     <p>Location: {item.location}</p>
