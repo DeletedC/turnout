@@ -56,9 +56,14 @@ body {
   }
 
 
-/* ///////////////////////////////////
+
+
+  /* ///////////////////////////////////
     mainNav - logo, login-buttons
 /////////////////////////////////// */
+
+
+
 
 .logo-img {
     width: 15%;
@@ -91,9 +96,11 @@ body {
     }
 }
 
-/* ////////////////////////
-        login page
-/////////////////////////*/
+
+
+/* //////////////////////////////////
+        login + signup page
+///////////////////////////////////*/
 
 .form-title {
     text-align: center;
@@ -137,82 +144,116 @@ body {
 
 
 
+/*////////////////////////////
+         main app page
+////////////////////////////*/
 
 
+header {
+    padding-top: 50px;
+    text-align: center;
+    font-family: $title-text;
+    h1 {
+        color: $primary-color;
+        font-size: 3rem;
+        text-shadow: .5px .5px black, 1px 1px black;
+    }
+    h2 {
+        font-size: 2.2rem;
+        margin-top: -45px;
+        color: $primary-color;
+        opacity: .9;
+        text-shadow: .5px .5px black;
+    }
+}
+.small-logo {
+    width: 12%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/*////////////////////////
+        events
+////////////////////////*/
 
-
-
-  .event-list {
+.event-list {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
     list-style: none;
+    // .listed-event {
+    //     font-family: 'Open Sans', sans-serif;
+    //     font-weight: 700;
+    //     text-transform: uppercase;
+    //     color: $title-color;
+    //     font-size: 1.5rem;
+    //     text-shadow: .5px .5px $primary-color, 1px 1px $primary-color;
+    //     width: 12%;
+    //     .event-snippet {
+    //         display: none;
+    //     }
+    // }
+    // .listed-event:hover {
+    //     .event-snippet {
+    //         display: block;
+    //         p {
+    //             font-family: 'Open Sans', sans-serif;
+    //             font-size: .7rem;
+    //             color: $primary-color;
+    //             text-transform: uppercase;
+    //             background-color: $secondary-color;
+    //             border: .5px solid $primary-color;
+    //         } 
+    //     }
+    // }
+}
+
+.event-items {
+    padding-top: 45px;
     .listed-event {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 700;
+        background-color: $secondary-color;
+        border: 2px solid $primary-color;
         text-transform: uppercase;
-        color: $title-color;
-        font-size: 1rem;
-        text-shadow: .5px .5px $primary-color, 1px 1px $primary-color;
-        width: 250px;
-        height: 250px;
-        .event-snippet {
-            display: none;
-        }
+        font-family: $normal-text;
+        border-radius: 3px;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
     }
-    .listed-event:hover {
-        .event-snippet {
-            display: block;
-            p {
-                font-family: 'Open Sans', sans-serif;
-                font-size: .7rem;
-                color: $primary-color;
-                text-transform: uppercase;
-                background-color: $secondary-color;
-                border: .5px solid $primary-color;
-            } 
-        }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown:hover .listed-event {
+        background-color: white;
+        transition: $btn-transition;
+        border: .2px solid $primary-color;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .event-details {
+        color: $primary-color;
+        font-size: .8rem;
+        text-transform: uppercase;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
     }
 }
 
 
-// .event-handlers {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     text-align: center;
-//     font-family: 'Nunito', sans-serif;
-//     color: $primary-color;
-//     text-shadow: .5px .5px black;
-//     .edit-event {
-//         background-color: $secondary-color;
-//         border: 3px solid $primary-color;
-//         border-radius: 20px;
-//         padding: 15px 70px 50px 70px;
-//         box-shadow: 1px 1px 1px 1px $primary-color;
-//     }
-//     img {
-//         height: 200px;
-//         margin-top: 50px;
-//         padding: 0 20px;
-//     }
-//     button {
-//         margin-top: 20px;
-//         background-color: $primary-color;
-//         border: 2px solid $primary-color;
-//         border-radius: 5px;
-//         color: white;
-//         padding: 5px 10px;
-//         cursor: pointer;
 
-//     }
-//     button:hover {
-//         background-color: $title-color;
-//         transition: .3s;
-//     }
-
-// }
 
 /*///////////////
       create 
