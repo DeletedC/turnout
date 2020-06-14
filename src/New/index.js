@@ -17,6 +17,7 @@ export default (New)=>{
         location: "",
         images: [],
         attendees: []
+        
       };
 
       const getEvents = async () => {
