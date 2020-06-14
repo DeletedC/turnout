@@ -28,8 +28,8 @@ export default (props) => {
  
 
     return (
-        <div className="create-container">
-        <p className="create-title">Your Event</p>
+        <>
+        <p className="event">Your Event</p>
         <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/><br/>
         <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/><br/>
 
@@ -41,13 +41,12 @@ export default (props) => {
             <option name="AM" value={formData.AM}>AM</option>
             <option name="PM" value={formData.PM}>PM</option>
         </select>
-        <label>Am or Pm</label>
         </div>
 
         <br/>
-        Hour: <input  onChange={handleChange} value={formData.hour} type="number" min="0" max="12" name="hours" /><br/>
+        Hour <input  onChange={handleChange} value={formData.hour} type="number" min="0" max="12" name="hours" /><br/>
         
-        Minutes: <input onChange={handleChange} value={formData.minute} type="number" min="0" max="60" name="minutes" /><br/>
+        Minutes <input onChange={handleChange} value={formData.minute} type="number" min="0" max="60" name="minutes" /><br/>
 
 
         <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange}/><br/>
@@ -57,7 +56,7 @@ export default (props) => {
         }}>SUBMIT</button>
         
         
-        </div>
+        </>
 )
 
 }

@@ -176,7 +176,7 @@ header {
         events
 ////////////////////////*/
 
-.event-list {
+.event-list, .acct-event-list {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -242,19 +242,19 @@ header {
 
 
 
-/*///////////////
-      create 
- //////////////*/
+/*///////////////////////////
+      create/edit page 
+ //////////////////////////*/
 
 
-.create-container {
+.create-container, .edit-container {
     background-image: url(./imgs/background.png);
     background-size: 100%;
     background-position: center;
 }
 
-.create-page {
-    .create-title, .second-title {
+.create-page, .edit-page {
+    .create-title, .second-title, .edit-title {
         text-align: center;
         font-size: 3rem;
         margin-top: 40px;
@@ -268,7 +268,7 @@ header {
         opacity: .9;
         text-shadow: 1px 1px $primary-color;
     }
-    .create-descrip {
+    .create-descrip, .edit-descrip {
         margin: 0 auto;
         text-align: center;
         width: 30%;
@@ -279,7 +279,7 @@ header {
         font-weight: 700;
         text-shadow: .5px .5px $primary-color;
     }
-    .create-event {
+    .create-event, .edit-event {
         font-size: .7rem;
         text-transform: uppercase;
         width: 15%;
@@ -319,6 +319,66 @@ header {
         }
     }
 }
+
+/*//////////////////////////
+        account page
+//////////////////////////*/
+
+.acct-event-list {
+    .event-items {
+        text-align: center;
+        margin: 0 20px;
+        
+        .listed-event{
+            color: $primary-color;
+            text-shadow: 1px 1px white;
+            a:hover  {
+                color: white;
+                text-shadow: 1px 1px $primary-color;
+            }
+            .edit-event-details{
+                text-align: center;
+                color: $title-color;
+                font-size: .9rem;
+                text-transform: uppercase;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-weight: 600;
+                text-shadow: 1px 1px $primary-color;
+            }
+        }
+            button {
+                background-color: $primary-color;
+                border: 2px solid $primary-color;
+                border-radius: 5px;
+                color: white;
+                padding: 5px 10px;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: .7rem;
+                margin: 0 10px 10px 10px;
+                a {
+                    color: white;
+                    font-size: .7rem;
+                    padding: -2px 5px;
+                }
+            }
+            button:hover {
+                background-color: $title-color;
+                transition: .3s;
+                }
+            }
+            .listed-event:hover {
+                background-color: rgb(156, 186, 199);
+                transition: $btn-transition;
+            }
+        }
+
+    
+
+
+
 
 
 

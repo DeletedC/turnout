@@ -62,26 +62,28 @@ export default (props) => {
 
     return(
         <div>
-            <ul>
+            <ul className="acct-event-list">
     {events
         ? events.map((item) => {
         return (
-            <li key={item._id}><Link to="/show">{item.title}</Link>
-            <br/>
+          <div className="event-items">
+            <li key={item._id} className="listed-event"><Link to="/show">{item.title}</Link>
+              <br/>
+                <div className="edit-event-details">
+                <p>{item.category}</p>
+                <p>{item.date}</p>
+                <p>{item.location}</p>
+                </div>
             <button>
-                <Link to={{pathname: '/edit', state: {item}}}>
+              <Link to={{pathname: '/edit', state: {item}}}>
                 Edit
-                </Link>
+              </Link>
             </button>
             <button onClick={() => {handleDelete(item._id)}}>
                 Delete
             </button>
-                <div>
-                <p>Category: {item.category}</p>
-                <p>Date: {item.date}</p>
-                <p>Location: {item.location}</p>
-                </div>
-            </li>
+          </li>
+        </div>
         );
         })
         : "Loading..."
