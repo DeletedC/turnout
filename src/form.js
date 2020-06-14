@@ -29,8 +29,7 @@ export default (props) => {
 
     return (
         <>
-        <div className="form-cont">
-        <form>
+        <p className="event">Your Event</p>
         <input type="text" name="title" placeholder="title" value={formData.title} onChange={handleChange}/><br/>
         <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/><br/>
 
@@ -56,8 +55,8 @@ export default (props) => {
             props.handleSubmit(formData);
             setFormData(props.initial);
         }}>SUBMIT</button>
-        </form>
-        </div>
+        
+        
         </>
 )
 
