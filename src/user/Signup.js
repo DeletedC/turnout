@@ -22,9 +22,9 @@ export default (Signup) => {
 
     try {
         const newUser = { email, password, passwordCheck, username, firstName, lastName };
-        console.log(newUser)
-        await Axios.post("http://localhost:8000/users/signup", newUser);
-        const loginRes = await Axios.post("http://localhost:8000/users/login", {
+        // console.log(newUser)
+        await Axios.post("https://turnout-nova-api.herokuapp.com/users/signup", newUser);
+        const loginRes = await Axios.post("https://turnout-nova-api.herokuapp.com/users/login", {
         username,
         password,
         });

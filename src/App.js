@@ -18,7 +18,7 @@ const App = (props) => {
 
   // Get the events from the API
   const getEvents = async () => {
-    const response = await fetch('http://localhost:8000/events');
+    const response = await fetch('https://turnout-nova-api.herokuapp.com/events');
     const result = await response.json();
     
     // Test console.log
