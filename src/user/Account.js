@@ -30,7 +30,7 @@ export default (props) => {
 
   // Get the events from the API
   const getEvents = async () => {
-    const response = await fetch('http://localhost:8000/events');
+    const response = await fetch('https://turnout-nova-api.herokuapp.com/events');
     const result = await response.json();
     
     // Test console.log
@@ -39,7 +39,7 @@ export default (props) => {
   };
 
   const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:8000/events/${id}`, {
+    const response = await fetch(`https://turnout-nova-api.herokuapp.com/events/${id}`, {
       method: "DELETE"
     });
     getEvents(); // Update the list of events
@@ -50,7 +50,7 @@ export default (props) => {
   };
 
   const handleEdit = async (item) => {
-    const response = await fetch(`http://localhost:8000/events/${item._id}`, {
+    const response = await fetch(`https://turnout-nova-api.herokuapp.com/events/${item._id}`, {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'

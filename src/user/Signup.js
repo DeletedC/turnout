@@ -22,9 +22,9 @@ export default (Signup) => {
 
     try {
         const newUser = { email, password, passwordCheck, username, firstName, lastName };
-        console.log(newUser)
-        await Axios.post("http://localhost:8000/users/signup", newUser);
-        const loginRes = await Axios.post("http://localhost:8000/users/login", {
+        // console.log(newUser)
+        await Axios.post("https://turnout-nova-api.herokuapp.com/users/signup", newUser);
+        const loginRes = await Axios.post("https://turnout-nova-api.herokuapp.com/users/login", {
         username,
         password,
         });
@@ -41,55 +41,67 @@ export default (Signup) => {
 
       return (
             <div>
-     <h2 className="center">Signup</h2>
+     <h2 className="form-title">Signup</h2>
      <div className="form-cont">
      {error && (
         <Error message={error} clearError={() => setError(undefined)} />
       )}
-     <form className="form-cont" onSubmit={submit}>
+     <form className="form-item" onSubmit={submit}>
         <label htmlFor="register-username">Username</label>
+        <br/>
         <input
           id="register-username"
           type="text"
+          className="signup-sctn"
           onChange={(event) => setUsername(event.target.value)}
           />
-
+        <br/>
 
         <label htmlFor="register-email">Email</label>
+        <br/>
         <input
           id="register-email"
           type="email"
+          className="signup-sctn"
           onChange={(event) => setEmail(event.target.value)}
           />
-
+        <br/>
 
         <label htmlFor="register-password">Password</label>
+        <br/>
         <input
           id="register-password"
           type="password"
+          className="signup-sctn"
           onChange={(event) => setPassword(event.target.value)}
           />
+        <br/>
         <input
           type="password"
-          placeholder="Confirm password"
+          className="signup-sctn"
+          placeholder="confirm password"
           onChange={(event) => setPasswordCheck(event.target.value)}
           />
-
+        <br/>
 
         <label htmlFor="register-first-name">First Name</label>
+        <br/>
         <input type="text"
+               className="signup-sctn"
                onChange={(event) => setFirstName(event.target.value)} 
         />
-
+        <br/>
         <label htmlFor="register-last-name">Last Name</label>
+        <br/>
         <input id="register-last-name" type="text"
+               className="signup-sctn"
                onChange={(event) => setLastName(event.target.value)} 
         />
+        <br/>
 
 
 
-
-        <input type="submit" value="Signup" />
+        <input type="submit" value="Signup" className="form-btn"/>
       </form>
             </div>
 
