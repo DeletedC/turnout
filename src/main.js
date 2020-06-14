@@ -70,7 +70,7 @@ export default () => {
             const token = localStorage.getItem("auth-token")
             if (token === null){
                 localStorage.setItem("auth-token", '')
-                token = ''
+                // token = ''
             }
             const tokenResponse = await Axios.post('http://localhost:8000/users/tokenisvalid', null, {
                 headers: {"x-auth-token": token} } 
