@@ -38,28 +38,28 @@ export default () => {
 
   return <>
 
-    <h2>Login</h2>
+    <h2 className="form-title">Login</h2>
      <div className="form-cont">
      {error && (
         <Error message={error} clearError={() => setError(undefined)} />
       )}
-     <form className="form-cont" onSubmit={submit}>
-        <label htmlFor="register-username">Username</label>
+     <form className="form-item" onSubmit={submit}>
+        <label htmlFor="register-username">Username:<br/></label>
         <input
           id="login-username"
           type="text"
           onChange={(event) => setUsername(event.target.value)}
           />
-
-        <label htmlFor="login-password">Password</label>
+        <br/>
+        <label htmlFor="login-password">Password:<br/></label>
         <input
           id="login-password"
           type="password"
           onChange={(event) => setPassword(event.target.value)}
           />
+        <br/>
 
-
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" className="form-btn"/>
       </form>
   </div>
   </>

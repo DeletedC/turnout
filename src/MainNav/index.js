@@ -27,10 +27,10 @@ export default (props) => {
 
             <nav className="grey darken-3 navbar-fixed">
             <a href="/">
-                <img className="logo-nav brand-logo left" src={logo} alt="turnout logo"/>
+                <img className="logo-img" src={logo} alt="turnout logo"/>
             </a>
             
-            <div className="btn-cont">
+            <div className="btn-function">
                 {
                     userData.user? 
                         <>
@@ -38,10 +38,10 @@ export default (props) => {
                         <button onClick={createNew}>New Event</button>
                         <button onClick={account}>Account</button>
                         </> :
-                    <>
-                    <button onClick={login}>Log In</button>
-                    <button onClick={signup}>Signup</button>
-                    </>
+                    <div class="buttons">
+                    <button className="acct-btns" onClick={login}>Log In</button>
+                    <button className="acct-btns" onClick={signup}>Signup</button>
+                    </div>
                 }
             </div>
 

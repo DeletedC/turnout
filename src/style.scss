@@ -4,6 +4,11 @@
 $primary-color:  rgb(14, 57, 77);
 $secondary-color: rgb(212, 212, 212);
 $title-color: rgb(34, 102, 255);
+$bground-color: rgb(245, 245, 245);
+$normal-text: 'Open Sans', sans-serif;
+$title-text: 'Domine', 'serif';
+$btn-transition: .2s;
+
 
 
 html {
@@ -13,7 +18,7 @@ html {
 }
 body {
     margin: 0;
-    background-color: rgb(245, 245, 245);
+    background-color: $bground-color;
 }
   
   article,
@@ -51,39 +56,91 @@ body {
   }
 
 
-/* /////////
-    main
-///////// */
+/* ///////////////////////////////////
+    mainNav - logo, login-buttons
+/////////////////////////////////// */
 
-nav {
+.logo-img {
+    width: 15%;
+    top: 0;
+    left: 0;
+}
+.buttons {
     top: 0;
     right: 0;
     position: absolute;
-    .list-items {
-        display: inline;
-        padding: 0 25px;
+    padding: 25px;
+    .acct-btns{
+        background-color: $primary-color;
+        margin: 0 10px;
+        padding: 8px 13px;
+        color: $secondary-color;
+        font-family: $normal-text;
+        border-radius: 5px;
+        border: .5px solid $primary-color;
         text-transform: uppercase;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 700;
+        font-weight: 600;
+        font-size: .7rem;
+        cursor: pointer;
+    }
+    .acct-btns:hover {
+        background-color: $title-color;
+        transition: $btn-transition;
         color: white;
-        font-size: .9rem;
+        border: .5px solid black;
     }
 }
 
-  header {
-      img {
-          width: 10%;
-      }
-      h1 {
-          color: $primary-color;
-          text-align: center;
-          font-size: 3rem;
-          width: 50%;
-          margin: 50px auto 100px;
-          font-family: 'Domine', serif;
+/* ////////////////////////
+        login page
+/////////////////////////*/
 
-      }
-  }
+.form-title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: $title-text;
+    color: $primary-color;
+    text-shadow: .5px .5px black, 1px 1px black;
+    padding-top: 20px;
+}
+.form-cont {
+    padding-top: 20px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $normal-text;
+    font-size: .8rem;
+    #login-username, #login-password, .signup-sctn {
+        width: 15%;
+        margin-bottom: 20px;
+    }
+    .form-btn {
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-family: $normal-text;
+        padding: 3px 20px;
+        font-weight: 600;
+        background-color: $title-color;
+        color: $secondary-color;
+        border: 1px solid $title-color;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 30px;
+    }
+    .form-btn:hover {
+        color: white;
+        border: 1px solid $primary-color;
+        transition: $btn-transition;
+    }
+    
+}
+
+
+
+
+
+
+
 
   .event-list {
     display: flex;
