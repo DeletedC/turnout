@@ -72,11 +72,11 @@ export default () => {
                 localStorage.setItem("auth-token", '')
                 token = ''
             }
-            const tokenResponse = await Axios.post('http://localhost:8000/users/tokenisvalid', null, {
+            const tokenResponse = await Axios.post('https://turnout-nova-api.herokuapp.com/users/tokenisvalid', null, {
                 headers: {"x-auth-token": token} } 
             )
             if (tokenResponse.data){
-                const userRespone = await Axios.get('http://localhost:8000/users', {
+                const userRespone = await Axios.get('https://turnout-nova-api.herokuapp.com/users', {
                     headers: {'x-auth-token': token},
                 })
                 setUserData({
