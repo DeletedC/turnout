@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./style.scss";
-<<<<<<< HEAD
-import Form from "./form.js"
-=======
->>>>>>> 6aaaf67f976ad1b39d6d9854dc435e37674d6f6e
+// import Form from "./form.js"
 import img from "./imgs/logo.png"
-import MainNav from "./MainNav/index"
+// import MainNav from "./MainNav/index"
 
 const App = (props) => {
 
