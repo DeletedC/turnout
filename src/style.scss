@@ -58,7 +58,7 @@ body {
 
 
 
-  /* ///////////////////////////////////
+/* ///////////////////////////////////
     mainNav - logo, login-buttons
 /////////////////////////////////// */
 
@@ -182,31 +182,6 @@ header {
     justify-content: space-evenly;
     flex-wrap: wrap;
     list-style: none;
-    // .listed-event {
-    //     font-family: 'Open Sans', sans-serif;
-    //     font-weight: 700;
-    //     text-transform: uppercase;
-    //     color: $title-color;
-    //     font-size: 1.5rem;
-    //     text-shadow: .5px .5px $primary-color, 1px 1px $primary-color;
-    //     width: 12%;
-    //     .event-snippet {
-    //         display: none;
-    //     }
-    // }
-    // .listed-event:hover {
-    //     .event-snippet {
-    //         display: block;
-    //         p {
-    //             font-family: 'Open Sans', sans-serif;
-    //             font-size: .7rem;
-    //             color: $primary-color;
-    //             text-transform: uppercase;
-    //             background-color: $secondary-color;
-    //             border: .5px solid $primary-color;
-    //         } 
-    //     }
-    // }
 }
 
 .event-items {
@@ -220,6 +195,16 @@ header {
         color: white;
         padding: 16px;
         font-size: 16px;
+        a {
+            text-decoration: none;
+            font-family: $normal-text;
+            font-weight: 600;
+            color: $primary-color;
+        }
+        a:hover {
+            color: $title-color;
+            transition: $btn-transition;
+        }
     }
     .dropdown {
         position: relative;
@@ -266,8 +251,8 @@ header {
     background-image: url(./imgs/background.png);
     background-size: 100%;
     background-position: center;
-    
 }
+
 .create-page {
     .create-title, .second-title {
         text-align: center;

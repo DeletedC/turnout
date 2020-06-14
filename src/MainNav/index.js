@@ -34,12 +34,12 @@ export default (props) => {
             <div className="btn-function">
                 {
                     userData.user? 
-                        <>
-                        <button onClick={logout}>Logout</button>
-                        <button onClick={createNew}>New Event</button>
-                        <button onClick={account}>Account</button>
-                        </> :
-                    <div class="buttons">
+                        <div className="buttons">
+                        <button className="acct-btns" onClick={logout}>Logout</button>
+                        <button className="acct-btns" onClick={createNew}>New Event</button>
+                        <button className="acct-btns" onClick={account}>Account</button>
+                        </div> :
+                    <div className="buttons">
                     <button className="acct-btns" onClick={login}>Log In</button>
                     <button className="acct-btns" onClick={signup}>Signup</button>
                     </div>
