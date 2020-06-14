@@ -1,8 +1,13 @@
 import React, {Component} from "react";
 import "../style.css";
 import Form from "../form.js"
+import { Link, useHistory, Redirect } from 'react-router-dom';
+
 
 export default (New)=>{
+
+    const history = useHistory();
+
     const [events, setEvents] = React.useState(null);
     const blank = {
         title: "",
@@ -33,6 +38,9 @@ export default (New)=>{
     });
     
     getEvents(); // Update the list of events
+    console.log(response);
+    history.push("/");
+    
   };
       return (
           <div>
