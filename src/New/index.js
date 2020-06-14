@@ -1,13 +1,10 @@
 import React, {Component} from "react";
 import "../style.css";
 import Form from "../form.js"
-<<<<<<< HEAD
 import MainNav from "../MainNav"
 import logo from "../imgs/logo-name.png"
-=======
 import { Link, useHistory, Redirect } from 'react-router-dom';
 
->>>>>>> 6aaaf67f976ad1b39d6d9854dc435e37674d6f6e
 
 export default (New)=>{
 

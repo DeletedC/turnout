@@ -213,14 +213,13 @@ header {
     padding-top: 45px;
     .listed-event {
         background-color: $secondary-color;
-        border: 2px solid $primary-color;
+        border: .5px solid $primary-color;
         text-transform: uppercase;
         font-family: $normal-text;
         border-radius: 3px;
         color: white;
         padding: 16px;
         font-size: 16px;
-        border: none;
     }
     .dropdown {
         position: relative;
@@ -232,23 +231,26 @@ header {
     .dropdown:hover .listed-event {
         background-color: white;
         transition: $btn-transition;
-        border: .2px solid $primary-color;
+        border: .5px solid $primary-color;
     }
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f1f1f1;
+        background-color: $primary-color;
         min-width: 200px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
     .event-details {
+        text-align: center;
         color: $primary-color;
         font-size: .8rem;
         text-transform: uppercase;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
+        color: white;
+        font-weight: 600;
     }
 }
 
