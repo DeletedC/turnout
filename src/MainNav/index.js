@@ -10,6 +10,8 @@ export default (props) => {
 
     const history = useHistory()
 
+    const createNew = () => {history.push("/new")}
+    const account = () => {history.push("/users/account")}
     const signup = () => {history.push("/users/signup")}
     const login = () => {history.push("/users/login")}
     const logout = () => {
@@ -21,17 +23,30 @@ export default (props) => {
     }
   
         return(
-            <nav>
-                <ul className="navbar">
-                    {
-                        this.state.routes.map((route, index)=>{
-                           return (
-                            <li  className="list-items" key={index}><Link to={route.path}>{route.name}</Link></li>
-                            )
-                         })
-                     }
-                 </ul>
+            <div className="nav-cont">
+
+            <nav className="grey darken-3 navbar-fixed">
+            <a href="/">
+                <img className="logo-nav brand-logo left" src={logo} alt="turnout logo"/>
+            </a>
+            
+            <div className="btn-cont">
+                {
+                    userData.user? 
+                        <>
+                        <button onClick={logout}>Logout</button>
+                        <button onClick={createNew}>New Event</button>
+                        <button onClick={account}>Account</button>
+                        </> :
+                    <>
+                    <button onClick={login}>Log In</button>
+                    <button onClick={signup}>Signup</button>
+                    </>
+                }
+            </div>
+
              </nav>
+            </div>
             
          )
 }
