@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import '../MainNav/style.scss'
 import logo from "../imgs/logo-name.png";
 import UserContext from "../context/UserContext.js"
@@ -20,6 +20,7 @@ export default (props) => {
             user: undefined
         })
         localStorage.setItem('auth-token', '')
+        history.push("/")
     }
   
         return(

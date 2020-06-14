@@ -1,8 +1,13 @@
 import React, {Component} from "react";
 import "../style.css";
 import Form from "../form.js"
+import { Link, useHistory, Redirect } from 'react-router-dom';
+
 
 export default (props)=>{
+
+    const history = useHistory()
+
 
      const [eventToEdit, setEvents] = React.useState({
         title: "",
@@ -31,6 +36,7 @@ export default (props)=>{
           body: JSON.stringify(item)
         });
         getEvents(); // Update list of events
+        history.push("/")
       };
 
     //   const handleSelect = async (item) => {

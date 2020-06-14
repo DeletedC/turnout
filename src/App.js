@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./style.scss";
+<<<<<<< HEAD
 import Form from "./form.js"
+=======
+>>>>>>> 6aaaf67f976ad1b39d6d9854dc435e37674d6f6e
 import img from "./imgs/logo.png"
 import MainNav from "./MainNav/index"
 
@@ -10,26 +13,6 @@ const App = (props) => {
 
   // State to hold all events
   const [events, setEvents] = React.useState(null);
-
-  // State to hold the event the user wants to edit
-  const [eventToEdit, setEventToEdit] = React.useState({
-    title: "",
-    category: "",
-    date: "",
-    location: "",
-    images: "",
-    attendees: []
-  });
-
-  // // Holds blank form data
-  // const blank = {
-  //   title: "",
-  //   category: "",
-  //   date: "",
-  //   location: "",
-  //   images: [],
-  //   attendees: []
-  // };
 
   // Hook to get events when the component loads
   React.useEffect(() => {
@@ -44,28 +27,6 @@ const App = (props) => {
     // Test console.log
     console.log(result);
     setEvents(result);
-  };
-
-  const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:8000/events/${id}`, {
-      method: "DELETE"
-    });
-    getEvents(); // Update the list of events
-  };
-
-  const handleSelect = async (item) => {
-    setEventToEdit(item);
-  };
-
-  const handleEdit = async (item) => {
-    const response = await fetch(`http://localhost:8000/events/${item._id}`, {
-      method: "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(item)
-    });
-    getEvents(); // Update list of events
   };
 
   return (
