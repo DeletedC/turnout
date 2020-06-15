@@ -41,8 +41,8 @@ export default (New)=>{
   };
 
   return (
-    <body className="create-container">
-      <div class="create-page">
+    <div className="create-container">
+      <div className="create-page">
         <h2 className="create-title">Planning an event?</h2>
         <h3 className="second-title">We're here to help.</h3>
         <p className="create-descrip">Holding a vigil or a march? Is the march on foot or bike-centric?<br/> Use this form to create your gathering.</p>
@@ -50,6 +50,6 @@ export default (New)=>{
           <Form initial={blank} handleSubmit={handleCreate}/>
         </div>
       </div>
-    </body>
+    </div>
   )
 }

@@ -37,7 +37,7 @@ export default (props)=>{
   };
 
   return (
-    <body className="edit-container">
+    <div className="edit-container">
       <div className="edit-page">
         <h2 className="edit-title">Edit Your Event</h2>
         <p className="edit-descrip">Make any necessary changes to your event here.</p>
@@ -45,6 +45,6 @@ export default (props)=>{
           <Form initial={props.location.state.item} handleSubmit={handleEdit}/>
         </div>
       </div>
-    </body>
+    </div>
   )
 }
