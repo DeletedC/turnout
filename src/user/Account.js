@@ -2,7 +2,7 @@ import React from 'react'
 import MainNav from '../MainNav/index.js'
 import { Link } from 'react-router-dom';
 // import SocialFollow from "../SocialFollow"
-
+import Moment from 'moment'
 
 export default (props) => {
 
@@ -76,7 +76,7 @@ export default (props) => {
               <br/>
                 <div className="edit-event-details">
                 <p>{item.category}</p>
-                <p>{item.date}</p>
+                <p>{Moment(item.date).format("dddd, MMMM Do, h:mm a")}</p>
                 <p>{item.location}</p>
                 </div>
             <button>

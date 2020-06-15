@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./style.scss";
-// import Form from "./form.js"
 import img from "./imgs/logo.png"
 // import MainNav from "./MainNav/index"
 import Moment from 'moment'
@@ -28,9 +27,7 @@ const App = (props) => {
     // console.log(result);
     setEvents(result);
   };
-  events? events.map((item, index) => {
-    console.log('hey', Moment(item.date).format("dddd, MMMM Do, h:mm a"));
-  }) : console.log('ok');
+
 
   return (
     <>
