@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./style.scss";
-// import Form from "./form.js"
 import img from "./imgs/logo.png"
-// import MainNav from "./MainNav/index"
 
 const App = (props) => {
-
 
   // State to hold all events
   const [events, setEvents] = React.useState(null);
@@ -20,15 +17,11 @@ const App = (props) => {
   const getEvents = async () => {
     const response = await fetch('https://turnout-nova-api.herokuapp.com/events');
     const result = await response.json();
-    
-    // Test console.log
-    console.log(result);
     setEvents(result);
   };
 
   return (
     <>
-    
       <header>
         <h1>Organize from anywhere.</h1><br/>
         <h2>Find local gatherings you believe in.</h2>
@@ -40,27 +33,23 @@ const App = (props) => {
         {events? events.map((item) => {
 
             return (
-              <div className="event-items">
-              <div className="dropdown">
-                <li key={item._id} className="listed-event"><Link to="./show">{item.title}</Link></li>
-              <div class="dropdown-content">
-                <p className="event-details">{item.category}</p>
-                <p className="event-details">{item.date}</p>
-                <p className="event-details">{item.location}</p>
+              <div key={item._id} className="event-items">
+                <div className="dropdown">
+                  <li className="listed-event"><Link to="./show">{item.title}</Link></li>
+                  <div className="dropdown-content">
+                    <p className="event-details">{item.category}</p>
+                    <p className="event-details">{item.date}</p>
+                    <p className="event-details">{item.location}</p>
+                  </div>
                 </div>
-              </div>
               </div>
             );
           })
           : <li>Loading...</li>
         }
-      </ul>
-      
+      </ul>  
     </>
   );
 }
 
 export default App;
-
-
-
