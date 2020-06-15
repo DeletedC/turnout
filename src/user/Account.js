@@ -66,13 +66,15 @@ export default (props) => {
           <h2 className="account-title">Welcome back.</h2>
      <h3 className="second-title">Here you can edit and delete your events.</h3>
       </div>
-     {/* <p className="create-descrip">Holding a vigil or a march? Is the march on foot or bike-centric?<br/> Use this form to create your gathering.</p> */}
+
             <ul className="acct-event-list">
     {events
         ? events.map((item) => {
         return (
           <div className="event-items">
-            <li key={item._id} className="listed-event"><Link to="/show">{item.title}</Link>
+            <li key={item._id} className="listed-event"><Link to={{pathname: "/show", state: {item}}}>
+                        {item.title}
+                    </Link>
               <br/>
                 <div className="edit-event-details">
                 <p>{item.category}</p>
@@ -94,7 +96,6 @@ export default (props) => {
         : "Loading..."
     }
     </ul>
-{/*     <SocialFollow/> */}
         </div>
         
     )

@@ -40,12 +40,16 @@ const App = (props) => {
           <img src={img} alt="Img" className="small-logo"/>
         </div>
       <ul className="event-list">
-        {events? events.map((item) => {
+        {events? events.map((item, index) => {
 
             return (
               <div className="event-items">
               <div className="dropdown">
-                <li key={item._id} className="listed-event"><Link to="./show">{item.title}</Link></li>
+              <li className="listed-event">
+                    <Link to={{pathname: "/show", state: {item}}}>
+                        {item.title}
+                    </Link>
+                  </li>
               <div class="dropdown-content">
                 <p className="event-details">{item.category}</p>
                 <p className="event-details">{Moment(item.date).format("dddd, MMMM Do, h:mm a")}</p>
