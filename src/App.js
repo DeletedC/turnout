@@ -4,6 +4,9 @@ import "./style.scss";
 // import Form from "./form.js"
 import img from "./imgs/logo.png"
 // import MainNav from "./MainNav/index"
+import Moment from 'moment'
+
+
 
 const App = (props) => {
 
@@ -22,9 +25,12 @@ const App = (props) => {
     const result = await response.json();
     
     // Test console.log
-    console.log(result);
+    // console.log(result);
     setEvents(result);
   };
+  events? events.map((item, index) => {
+    console.log('hey', Moment(item.date).format("dddd, MMMM Do, h:mm a"));
+  }) : console.log('ok');
 
   return (
     <>
@@ -45,7 +51,7 @@ const App = (props) => {
                 <li key={item._id} className="listed-event"><Link to="./show">{item.title}</Link></li>
               <div class="dropdown-content">
                 <p className="event-details">{item.category}</p>
-                <p className="event-details">{item.date}</p>
+                <p className="event-details">{Moment(item.date).format("dddd, MMMM Do, h:mm a")}</p>
                 <p className="event-details">{item.location}</p>
                 </div>
               </div>
