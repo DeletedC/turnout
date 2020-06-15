@@ -33,7 +33,7 @@ export default (props)=>{
       body: JSON.stringify(item)
     });
     getEvents(); // Update list of events
-    history.push("/")
+    history.push("/users/account")
   };
 
   return (

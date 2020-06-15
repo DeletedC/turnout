@@ -36,7 +36,7 @@ export default (New)=>{
     });
     
     getEvents(); // Update the list of events
-    history.push("/");
+    history.push("/users/account");
     
   };
 
