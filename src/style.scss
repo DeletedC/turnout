@@ -247,14 +247,14 @@ header {
  //////////////////////////*/
 
 
-.create-container, .edit-container {
+.create-container, .edit-container, .account-container {
     background-image: url(./imgs/background.png);
     background-size: 100%;
     background-position: center;
 }
 
-.create-page, .edit-page {
-    .create-title, .second-title, .edit-title {
+.create-page, .edit-page, .account-page {
+    .create-title, .second-title, .edit-title, .account-title {
         text-align: center;
         font-size: 3rem;
         margin-top: 40px;
