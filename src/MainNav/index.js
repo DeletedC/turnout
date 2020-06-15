@@ -35,8 +35,8 @@ export default (props) => {
                 {
                     userData.user? 
                         <div className="buttons">
-                        <button className="acct-btns" onClick={logout}>Logout</button>
                         <button className="acct-btns" onClick={createNew}>New Event</button>
+                        <button className="acct-btns" onClick={logout}>Logout</button>
                         <button className="acct-btns" onClick={account}>Account</button>
                         </div> :
                     <div className="buttons">
