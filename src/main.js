@@ -1,7 +1,5 @@
 import React, { useState, useEffect} from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import Axios from 'axios'
 
@@ -56,8 +54,6 @@ const routes = [
     },
 ]
 
-// let his = createBrowserHistory();
-
 export default () => {
 
     const [userData, setUserData] = useState({
@@ -67,7 +63,7 @@ export default () => {
     
     useEffect(() => {
         const checkLoggedIn = async () => {
-            const token = localStorage.getItem("auth-token")
+            let token = localStorage.getItem("auth-token")
             if (token === null){
                 localStorage.setItem("auth-token", '')
                 token = ''

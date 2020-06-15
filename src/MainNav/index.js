@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useHistory, Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../MainNav/style.scss'
 import logo from "../imgs/logo-name.png";
 import UserContext from "../context/UserContext.js"
