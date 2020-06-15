@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 // import SocialFollow from "../SocialFollow"
-
+import Moment from 'moment'
 
 export default (props) => {
 
@@ -37,6 +37,7 @@ export default (props) => {
             <ul className="acct-event-list">
     {events
         ? events.map((item) => {
+
             return (
             <div key={item._id} className="event-items">
                 <li className="listed-event">
@@ -60,6 +61,26 @@ export default (props) => {
                 </li>
             </div>
             );
+        return (
+          <div className="event-items">
+            <li key={item._id} className="listed-event"><Link to="/show">{item.title}</Link>
+              <br/>
+                <div className="edit-event-details">
+                <p>{item.category}</p>
+                <p>{Moment(item.date).format("dddd, MMMM Do, h:mm a")}</p>
+                <p>{item.location}</p>
+                </div>
+            <button>
+              <Link to={{pathname: '/edit', state: {item}}}>
+                Edit
+              </Link>
+            </button>
+            <button onClick={() => {handleDelete(item._id)}}>
+                Delete
+            </button>
+          </li>
+        </div>
+        );
         })
         : "Loading..."
     }
