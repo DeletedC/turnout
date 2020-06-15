@@ -1,7 +1,5 @@
 import React, { useState, useEffect} from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import Axios from 'axios'
 
@@ -55,8 +53,6 @@ const routes = [
         name: "Home"
     },
 ]
-
-// let his = createBrowserHistory();
 
 export default () => {
 

@@ -27,8 +27,8 @@ const App = (props) => {
         <h2>Find local gatherings you believe in.</h2>
       </header>
       <div>
-          <img src={img} alt="Img" className="small-logo"/>
-        </div>
+        <img src={img} alt="Img" className="small-logo"/>
+      </div>
       <ul className="event-list">
         {events? events.map((item) => {
 
