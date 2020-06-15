@@ -35,7 +35,11 @@ const App = (props) => {
             return (
               <div key={item._id} className="event-items">
                 <div className="dropdown">
-                  <li className="listed-event"><Link to="./show">{item.title}</Link></li>
+                  <li className="listed-event">
+                    <Link to={{pathname: "/show", state: {item}}}>
+                        {item.title}
+                    </Link>
+                  </li>
                   <div className="dropdown-content">
                     <p className="event-details">{item.category}</p>
                     <p className="event-details">{item.date}</p>
