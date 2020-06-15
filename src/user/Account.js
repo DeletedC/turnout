@@ -63,7 +63,7 @@ export default (props) => {
     return(
         <div className="account-container">
           <div className="account-page">
-          <h2 className="create-title">Welcome back.</h2>
+          <h2 className="account-title">Welcome back.</h2>
      <h3 className="second-title">Here you can edit and delete your events.</h3>
       </div>
      {/* <p className="create-descrip">Holding a vigil or a march? Is the march on foot or bike-centric?<br/> Use this form to create your gathering.</p> */}
