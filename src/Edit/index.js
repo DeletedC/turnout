@@ -25,7 +25,7 @@ export default (props)=>{
   };
 
   const handleEdit = async (item) => {
-    const response = await fetch(`https://turnout-nova-api.herokuapp.com/events/${item._id}`, {
+    await fetch(`https://turnout-nova-api.herokuapp.com/events/${item._id}`, {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'
