@@ -41,13 +41,12 @@ export default (props) => {
             <option name="AM" value={formData.AM}>AM</option>
             <option name="PM" value={formData.PM}>PM</option>
         </select>
-        <label>Am or Pm</label>
         </div>
 
         <br/>
-        Hour: <input  onChange={handleChange} value={formData.hour} type="number" min="0" max="12" name="hours" /><br/>
+        Hour <input  onChange={handleChange} value={formData.hour} type="number" min="0" max="12" name="hours" /><br/>
         
-        Minutes: <input onChange={handleChange} value={formData.minute} type="number" min="0" max="60" name="minutes" /><br/>
+        Minutes <input onChange={handleChange} value={formData.minute} type="number" min="0" max="60" name="minutes" /><br/>
 
 
         <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange}/><br/>
