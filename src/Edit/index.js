@@ -44,10 +44,16 @@ export default (props)=>{
     //   };
 
       return (
-        <div>
+        <body className="edit-container">
+          <div className="edit-page">
           {console.log(props)}
-          <h2>Edit Event</h2>
+          <h2 className="edit-title">Edit Your Event</h2>
+          <p className="edit-descrip">Make any necessary changes to your event here.</p>
+          <div className="edit-event">
           <Form initial={props.location.state.item} handleSubmit={handleEdit}/>
-        </div>
+          </div>
+          </div>
+        </body>
+        
       )
 }
